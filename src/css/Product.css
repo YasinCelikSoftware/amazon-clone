@@ -42,6 +42,10 @@
   margin-top: 15px;
 }
 
+.product__button:hover {
+  cursor: pointer;
+}
+
 .product__primeIcon {
   width: 65px !important;
   margin: 0 !important;
