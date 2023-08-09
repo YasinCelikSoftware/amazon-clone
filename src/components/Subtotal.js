@@ -1,17 +1,21 @@
 import React from 'react';
 import '../css/Subtotal.css';
 import CurrencyFormat from 'react-currency-format';
+import {useSelector} from 'react-redux';
 
 function Subtotal () {
+  const cart = useSelector (state => state.cartReducer);
+  const sum = cart.reduce ((sum, product) => sum + product.price, 0);
+
   return (
     <div className="subtotal">
       <CurrencyFormat
         renderText={value => (
           <div>
             <p>
-              Ara Toplam (0 Ürün):
+              Ara Toplam ({cart.length}):
               <strong>
-                0
+                {value}
               </strong>
             </p>
             <small className="subtotal__gift">
@@ -20,7 +24,7 @@ function Subtotal () {
           </div>
         )}
         decimalScale={2}
-        value={0}
+        value={sum}
         displayType="text"
         thousandSeparator={true}
         prefix="₺"
