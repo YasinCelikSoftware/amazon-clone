@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/Header.css';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 
 function Header () {
   return (
@@ -12,6 +13,14 @@ function Header () {
         alt="Amazon Logo"
       />
 
+      <div className="header__nav">
+        <PlaceOutlinedIcon className="header__optionLocation" />
+        <div className="header__option">
+          <span className="header__optionLineOne">Merhaba</span>
+          <span className="header__optionLineTwo">Teslimat Adresini Seçin</span>
+        </div>
+      </div>
+
       <div className="header__search">
         <input className="header__searchInput" />
         <SearchIcon className="header__searchIcon" />
@@ -19,18 +28,13 @@ function Header () {
 
       <div className="header__nav">
         <div className="header__option">
-          <span className="header__optionLineOne">Hello Guest</span>
-          <span className="header__optionLineTwo">Sign In</span>
+          <span className="header__optionLineOne">Merhaba, Giriş yapın</span>
+          <span className="header__optionLineTwo">Hesap ve Listeler</span>
         </div>
 
         <div className="header__option">
-          <span className="header__optionLineOne">Returns</span>
-          <span className="header__optionLineTwo">& Orders</span>
-        </div>
-
-        <div className="header__option">
-          <span className="header__optionLineOne">Your</span>
-          <span className="header__optionLineTwo">Prime</span>
+          <span className="header__optionLineOne">İadeler</span>
+          <span className="header__optionLineTwo">ve Siparişler</span>
         </div>
 
         <div className="header__optionBasket">
