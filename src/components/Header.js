@@ -4,8 +4,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import {Link} from 'react-router-dom';
+import {useSelector} from 'react-redux';
 
 function Header () {
+  const cart = useSelector (state => state.cartReducer);
   return (
     <div className="header">
       <Link to="/">
@@ -44,7 +46,9 @@ function Header () {
           <Link to="/sepet">
             <ShoppingBasketIcon className="header__basketIcon" />
           </Link>
-          <span className="header__basketCount header__optionLineTwo">0</span>
+          <span className="header__basketCount header__optionLineTwo">
+            {cart?.length}
+          </span>
         </div>
       </div>
 
