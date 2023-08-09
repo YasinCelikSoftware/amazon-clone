@@ -1,0 +1,54 @@
+body {
+  background-color: white;
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+
+.notfound img {
+  object-fit: contain;
+}
+
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  background-color: white;
+}
+
+.notfound__logo {
+  margin-bottom: 20px;
+}
+
+.notfound__container {
+  display: flex;
+}
+
+.notfound__questionMark {
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.notfound__lineOne {
+  color: #e47911;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.notfound__lineTwo {
+  font-size: 16px;
+}
+
+.notfound__return {
+  display: flex;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.notfound__rightArrow {
+  margin-right: 5px;
+}
+
+.notfound__return a:visited {
+  color: #996633;
+}
