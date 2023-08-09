@@ -3,15 +3,18 @@ import '../css/Header.css';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
+import {Link} from 'react-router-dom';
 
 function Header () {
   return (
     <div className="header">
-      <img
-        className="header__logo"
-        src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-        alt="Amazon Logo"
-      />
+      <Link to="/">
+        <img
+          className="header__logo"
+          src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          alt="Amazon Logo"
+        />
+      </Link>
 
       <div className="header__nav">
         <PlaceOutlinedIcon className="header__optionLocation" />
@@ -38,7 +41,9 @@ function Header () {
         </div>
 
         <div className="header__optionBasket">
-          <ShoppingBasketIcon className="header__basketIcon" />
+          <Link to="/sepet">
+            <ShoppingBasketIcon className="header__basketIcon" />
+          </Link>
           <span className="header__basketCount header__optionLineTwo">0</span>
         </div>
       </div>
