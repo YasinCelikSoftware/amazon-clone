@@ -32,10 +32,12 @@ function Header () {
       </div>
 
       <div className="header__nav">
-        <div className="header__option">
-          <span className="header__optionLineOne">Merhaba, Giriş yapın</span>
-          <span className="header__optionLineTwo">Hesap ve Listeler</span>
-        </div>
+        <Link to="/login">
+          <div className="header__option">
+            <span className="header__optionLineOne">Merhaba, Giriş yapın</span>
+            <span className="header__optionLineTwo">Hesap ve Listeler</span>
+          </div>
+        </Link>
 
         <div className="header__option">
           <span className="header__optionLineOne">İadeler</span>
@@ -47,7 +49,7 @@ function Header () {
             <ShoppingBasketIcon className="header__basketIcon" />
           </Link>
           <span className="header__basketCount header__optionLineTwo">
-            {cart?.length}
+            {cart.length}
           </span>
         </div>
       </div>
