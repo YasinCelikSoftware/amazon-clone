@@ -1,0 +1,97 @@
+.login {
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login__logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  object-fit: contain;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.login__container {
+  width: 300px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.login__container > h1 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.login__container > form > h5 {
+  margin-bottom: 5px;
+}
+
+.login__container > form > input {
+  height: 30px;
+  margin-bottom: 10px;
+  background-color: white;
+  width: 98%;
+}
+
+.login__container > p {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.login__signInButton {
+  background: #f0c14b;
+  border-radius: 2px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #a88734 #9c7e31 #846a29;
+}
+
+.login__signUp {
+  width: 300px;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.login__signUpTitle {
+  font-size: 12px;
+  position: relative;
+  background-color: white;
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  z-index: 2; /* Move this here */
+  color: #767676;
+}
+
+.login__signUp::after {
+  content: " ";
+  width: 300px;
+  position: absolute;
+  background-color: transparent;
+  display: block;
+  top: 52%; /* Position the line at the bottom of the title */
+
+  z-index: 1;
+  border-top: 1px solid #a7a7a7;
+  margin-top: -6px;
+}
+
+.login__signUpButton {
+  border-radius: 5px;
+  width: 300px;
+  height: 30px;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: darkgray;
+}
