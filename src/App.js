@@ -2,9 +2,9 @@ import './App.css';
 import NotFound from './NotFound';
 import PageLayout from './PageLayout';
 import Checkout from './components/Checkout';
-import Header from './components/Header';
 import Home from './components/Home';
 import {Routes, Route} from 'react-router-dom';
+import Login from './components/Login';
 
 function App () {
   return (
@@ -14,6 +14,7 @@ function App () {
           <Route path="/" element={<Home />} />
           <Route path="/sepet" element={<Checkout />} />
         </Route>
+        <Route path="/login" element={<Login />} />;
         <Route path="*" element={<NotFound />} />;
       </Routes>
     </div>
