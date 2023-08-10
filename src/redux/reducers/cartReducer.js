@@ -1,6 +1,9 @@
 import * as actionTypes from '../actions/actionTypes';
 import initialState from './initialState';
 
+export const getCartTotal = cart =>
+  cart?.reduce ((sum, product) => sum + product.price, 0);
+
 export default function cartReducer (state = initialState.cart, action) {
   switch (action.type) {
     case actionTypes.ADD_TO_CART:
