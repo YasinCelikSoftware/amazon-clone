@@ -6,6 +6,7 @@ import BasketItem from './BasketItem';
 
 function Checkout () {
   const cart = useSelector (state => state.cartReducer);
+
   return (
     <div className="checkout">
       <div className="checkout__left">
