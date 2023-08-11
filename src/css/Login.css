@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.login button:hover {
+  cursor: pointer;
+}
+
 .login__logo {
   margin-top: 20px;
   margin-bottom: 20px;

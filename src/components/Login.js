@@ -1,15 +1,41 @@
 import React, {useState} from 'react';
 import '../css/Login.css';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import {auth} from '../firebase';
 
 function Login () {
+  let navigate = useNavigate ();
   const [email, setEmail] = useState ('');
   const [password, setPassword] = useState ('');
 
   const signIn = e => {
     e.preventDefault ();
-    console.log ('email: ', email, '  pw: ', password);
-    //Firebase login şeysileri gelcek
+
+    auth
+      .signInWithEmailAndPassword (email, password)
+      .then (auth => {
+        if (auth) {
+          alert ('Başarıyla giriş yapıldı.');
+          navigate ('/');
+        }
+      })
+      .catch (err => {
+        alert ('Kullanıcı adı veya şifreniz yanlış.');
+      });
+  };
+
+  const signUp = e => {
+    e.preventDefault ();
+
+    auth
+      .createUserWithEmailAndPassword (email, password)
+      .then (auth => {
+        console.log (auth);
+        if (auth) {
+          navigate ('/');
+        }
+      })
+      .catch (error => alert (error.message));
   };
 
   return (
@@ -50,7 +76,7 @@ function Login () {
       <div className="login__signUp">
         <p className="login__signUpTitle">Amazon hesabınız yok mu?</p>
       </div>
-      <button type="submit" className="login__signUpButton">
+      <button onClick={signUp} type="submit" className="login__signUpButton">
         Amazon hesabınızı oluşturun
       </button>
 
