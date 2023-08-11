@@ -8,6 +8,7 @@ import {useSelector} from 'react-redux';
 
 function Header () {
   const cart = useSelector (state => state.cartReducer);
+  const user = useSelector (state => state.userReducer);
   return (
     <div className="header">
       <Link to="/">
@@ -34,7 +35,13 @@ function Header () {
       <div className="header__nav">
         <Link to="/login">
           <div className="header__option">
-            <span className="header__optionLineOne">Merhaba, Giriş yapın</span>
+            <span className="header__optionLineOne">
+              Merhaba,
+              {' '}
+              {user === null || user._delegate === undefined
+                ? 'Giriş Yapın'
+                : user._delegate.email}
+            </span>
             <span className="header__optionLineTwo">Hesap ve Listeler</span>
           </div>
         </Link>
