@@ -3,9 +3,11 @@ import '../css/Subtotal.css';
 import CurrencyFormat from 'react-currency-format';
 import {useSelector} from 'react-redux';
 import {getCartTotal} from '../redux/reducers/cartReducer';
+import {useNavigate} from 'react-router-dom';
 
 function Subtotal () {
   const cart = useSelector (state => state.cartReducer);
+  const navigate = useNavigate ();
 
   return (
     <div className="subtotal">
@@ -30,7 +32,9 @@ function Subtotal () {
         prefix="₺"
       />
 
-      <button className="">Ödemeye Geç</button>
+      <button onClick={e => navigate ('/odeme')}>
+        Ödemeye Geç
+      </button>
     </div>
   );
 }
