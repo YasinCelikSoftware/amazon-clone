@@ -5,10 +5,23 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import {Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
+import {auth} from '../firebase';
 
 function Header () {
   const cart = useSelector (state => state.cartReducer);
   const user = useSelector (state => state.userReducer);
+
+  const handleAuthentication = () => {
+    if (user) {
+      auth
+        .signOut ()
+        .then (() => {
+          alert ('Başarıyla çıkış yapıldı.');
+        })
+        .catch (err => console.log (err.message));
+    }
+  };
+
   return (
     <div className="header">
       <Link to="/">
@@ -33,16 +46,14 @@ function Header () {
       </div>
 
       <div className="header__nav">
-        <Link to="/login">
-          <div className="header__option">
+        <Link to={!user && '/login'}>
+          <div onClick={handleAuthentication} className="header__option">
             <span className="header__optionLineOne">
-              Merhaba,
-              {' '}
-              {user === null || user._delegate === undefined
-                ? 'Giriş Yapın'
-                : user._delegate.email}
+              Merhaba, {user ? user._delegate.email : 'Ziyaretçi'}
             </span>
-            <span className="header__optionLineTwo">Hesap ve Listeler</span>
+            <span className="header__optionLineTwo">
+              {user ? 'Çıkış Yap' : 'Giriş Yap'}
+            </span>
           </div>
         </Link>
 
