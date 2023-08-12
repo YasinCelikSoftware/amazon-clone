@@ -46,7 +46,7 @@ function Header () {
       </div>
 
       <div className="header__nav">
-        <Link to={!user && '/login'}>
+        <Link to={!user && '/giris'}>
           <div onClick={handleAuthentication} className="header__option">
             <span className="header__optionLineOne">
               Merhaba, {user ? user._delegate.email : 'Ziyaretçi'}
