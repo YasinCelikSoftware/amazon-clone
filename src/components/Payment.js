@@ -3,10 +3,13 @@ import {useSelector} from 'react-redux';
 import BasketItem from './BasketItem';
 import '../css/Payment.css'
 import { Link } from 'react-router-dom';
+import { useAutoAnimate } from '@formkit/auto-animate/react';
 
 function Payment () {
   const user = useSelector (state => state.userReducer);
   const cart = useSelector(state => state.cartReducer);
+
+  const [animation] = useAutoAnimate ();
 
   return (
     <div className="payment">
@@ -26,10 +29,10 @@ function Payment () {
             <div className='payment__title'>
                 <h3>Ürünleri İncele ve Sipariş Ver</h3>
             </div>
-            <div className='payment__items'>
+            <div ref={animation} className='payment__items'>
                 {cart.map(product => (
                     <BasketItem 
-                    key={product.id}
+                    key={Math.random () * 10}
                     id={product.id}
                     title={product.title}
                     image={product.image}
