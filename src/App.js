@@ -9,6 +9,7 @@ import {useEffect} from 'react';
 import {auth} from './firebase';
 import {useDispatch} from 'react-redux';
 import * as userActions from './redux/actions/userActions';
+import Payment from './components/Payment';
 
 function App () {
   const dispatch = useDispatch ();
@@ -29,8 +30,9 @@ function App () {
         <Route element={<PageLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/sepet" element={<Checkout />} />
+          <Route path="/odeme" element={<Payment />} />
         </Route>
-        <Route path="/login" element={<Login />} />;
+        <Route path="/giris" element={<Login />} />;
         <Route path="*" element={<NotFound />} />;
       </Routes>
     </div>
