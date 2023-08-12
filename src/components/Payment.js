@@ -4,6 +4,7 @@ import BasketItem from './BasketItem';
 import '../css/Payment.css'
 import { Link } from 'react-router-dom';
 import { useAutoAnimate } from '@formkit/auto-animate/react';
+import CreditCard from './CreditCard';
 
 function Payment () {
   const user = useSelector (state => state.userReducer);
@@ -47,7 +48,7 @@ function Payment () {
                 <h3>Ödeme Yöntemi</h3>
             </div>
             <div className='payment__details'>
-                {/* Stirpe Magic */}
+                  <CreditCard />
             </div>
         </div>
         
